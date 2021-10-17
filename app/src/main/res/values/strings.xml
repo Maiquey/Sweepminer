@@ -7,10 +7,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="title_activity_main_menu">Main Menu</string>
     <string name="title_activity_options">Options</string>
-    <string name="title_activity_help_screen">HelpScreen</string>
-    <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_help_screen">Help</string>
+    <string name="title_activity_game">Game</string>
 </resources>
