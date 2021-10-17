@@ -21,4 +21,16 @@ public class OptionsData {
         }
         return instance;
     }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public int getNumOfMines() {
+        return numOfMines;
+    }
 }
