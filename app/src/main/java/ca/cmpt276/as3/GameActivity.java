@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.navigation.ui.AppBarConfiguration;
@@ -25,6 +26,8 @@ public class GameActivity extends AppCompatActivity {
     private int numCols;
     private OptionsData optionsData;
     private GameManager gameManager;
+    private TextView mineCount;
+    private TextView numOfScans;
 
     private Button buttons[][];
 
@@ -54,12 +57,17 @@ public class GameActivity extends AppCompatActivity {
         numRows = optionsData.getRows();
         numCols = optionsData.getColumns();
 
+        mineCount = findViewById(R.id.text_mines_found);
+        numOfScans = findViewById(R.id.text_num_of_scans);
+
         buttons = new Button[numRows][numCols];
 
         populateGrid();
+        updateTexts();
     }
 
     private void populateGrid() {
+
         TableLayout table = (TableLayout) findViewById(R.id.table_cell_grid);
 
         for (int row = 0; row < numRows; row++){
@@ -111,11 +119,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void updateGrid() {
+        if (gameManager.gameWon()){
+            gameManager.revealGrid();
+            Toast.makeText(this, "Game won", Toast.LENGTH_SHORT).show();
+        }
         for (int row = 0; row < numRows; row++){
             for (int col = 0; col < numCols; col++){
-
-                //final int FINAL_COL = col;
-                //final int FINAL_ROW = row;
 
                 Button button = buttons[row][col];
 
@@ -131,6 +140,12 @@ public class GameActivity extends AppCompatActivity {
 
             }
         }
+        updateTexts();
+    }
+
+    private void updateTexts() {
+        mineCount.setText("Found " + gameManager.getNumOfMinesRevealed() + " of " + gameManager.getTotalMines() + " mines");
+        numOfScans.setText("Number of scans used: " + gameManager.getNumOfScans());
     }
 
 

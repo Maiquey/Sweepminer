@@ -10,10 +10,12 @@ public class GameManager {
     private int numOfMinesRevealed;
     private int gridRows;
     private int gridCols;
+    private int numOfScans;
 
     public GameManager(int numRows, int numCols, int numOfMines) {
         this.totalMines = numOfMines;
         this.numOfMinesRevealed = 0;
+        this.numOfScans = 0;
         this.cellGrid = new Cell[numRows][numCols];
         this.gridRows = numRows;
         this.gridCols = numCols;
@@ -50,8 +52,11 @@ public class GameManager {
             updateScanners();
         }
         else{
-            cell.setScanned(true);
-            updateNearbyMines(col, row);
+            if (!cell.isScanned()){
+                cell.setScanned(true);
+                numOfScans++;
+                updateNearbyMines(col, row);
+            }
         }
     }
 
@@ -86,5 +91,29 @@ public class GameManager {
 
     public Cell getCell(int row, int col){
         return cellGrid[row][col];
+    }
+
+    public void revealGrid(){
+        for (int row = 0; row < gridRows; row++){
+            for (int col = 0; col < gridCols; col++){
+                cellGrid[row][col].setScanned(true);
+            }
+        }
+    }
+
+    public boolean gameWon(){
+        return numOfMinesRevealed == totalMines;
+    }
+
+    public int getTotalMines() {
+        return totalMines;
+    }
+
+    public int getNumOfMinesRevealed() {
+        return numOfMinesRevealed;
+    }
+
+    public int getNumOfScans() {
+        return numOfScans;
     }
 }
