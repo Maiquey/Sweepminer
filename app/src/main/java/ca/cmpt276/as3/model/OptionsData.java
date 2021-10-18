@@ -4,9 +4,6 @@ import ca.cmpt276.as3.Options;
 
 public class OptionsData {
 
-    private static final int DEFAULT_ROWS = 4;
-    private static final int DEFAULT_COLS = 6;
-    private static final int DEFAULT_NUM_MINES = 6;
     private int rows;
     private int columns;
     private int numOfMines;
@@ -14,9 +11,6 @@ public class OptionsData {
     private static OptionsData instance;
 
     private OptionsData(){
-        //this.rows = DEFAULT_ROWS;
-        //this.columns = DEFAULT_COLS;
-        //this.numOfMines = DEFAULT_NUM_MINES;
     }
 
     public static  OptionsData getInstance(){

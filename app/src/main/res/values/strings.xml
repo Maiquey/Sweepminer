@@ -11,4 +11,7 @@
     <string name="title_activity_options">Options</string>
     <string name="title_activity_help_screen">Help</string>
     <string name="title_activity_game">Game</string>
+    <string name="dimensions_option_3">6 x 15</string>
+    <string name="dimensions_option_2">5 x 10</string>
+    <string name="dimensions_option_1">4 x 6</string>
 </resources>

@@ -23,6 +23,9 @@ import ca.cmpt276.as3.model.OptionsData;
 
 public class MainMenu extends AppCompatActivity {
 
+    private static final String OPTION_1_DIMENSIONS = "4 x 6";
+    private static final String OPTION_2_DIMENSIONS = "5 x 10";
+    private static final String OPTION_3_DIMENSIONS = "6 x 15";
     private static final int OPTION_1_ROWS = 4;
     private static final int OPTION_1_COLS = 6;
     private static final int OPTION_2_ROWS = 5;
@@ -93,16 +96,17 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void updateDimensions(String dimensions) {
+
         switch (dimensions){
-            case "4 x 6":
+            case OPTION_1_DIMENSIONS:
                 optionsData.setRows(OPTION_1_ROWS);
                 optionsData.setColumns(OPTION_1_COLS);
                 break;
-            case "5 x 10":
+            case OPTION_2_DIMENSIONS:
                 optionsData.setRows(OPTION_2_ROWS);
                 optionsData.setColumns(OPTION_2_COLS);
                 break;
-            case "6 x 15":
+            case OPTION_3_DIMENSIONS:
                 optionsData.setRows(OPTION_3_ROWS);
                 optionsData.setColumns(OPTION_3_COLS);
                 break;
@@ -121,7 +125,6 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
         this.finishAffinity();
     }
 }

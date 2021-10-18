@@ -38,8 +38,6 @@ public class Options extends AppCompatActivity {
         createGridOptionButtons();
         createMineOptionButtons();
 
-        String savedValue = getDimensions(this);
-        Toast.makeText(this, "saved value: " + savedValue, Toast.LENGTH_SHORT).show();
     }
 
     private void createGridOptionButtons() {
@@ -53,19 +51,16 @@ public class Options extends AppCompatActivity {
             RadioButton button = new RadioButton(this);
             button.setText("" + dimensions);
 
-            //set on-click
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(Options.this, "you clicked " + dimensions, Toast.LENGTH_SHORT).show();
-
                     saveDimensions(dimensions);
                 }
             });
 
             group.addView(button);
 
-            //select default button
+            //default button
             if (dimensions.equals(getDimensions(this))){
                 button.setChecked(true);
             }
@@ -98,19 +93,16 @@ public class Options extends AppCompatActivity {
             RadioButton button = new RadioButton(this);
             button.setText("" + mines);
 
-            //set on-click
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(Options.this, "you clicked " + mines, Toast.LENGTH_SHORT).show();
-
                     saveMines(mines);
                 }
             });
 
             group.addView(button);
 
-            //select default button
+            //default button
             if (mines == getMines(this)){
                 button.setChecked(true);
             }
