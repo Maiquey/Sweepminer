@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grid_dimensions">
+        <item>@string/dimensions_option_1</item>
+        <item>@string/dimensions_option_2</item>
+        <item>@string/dimensions_option_3</item>
+    </string-array>
+
+    <string name="default_grid_dimensions">@string/dimensions_option_1</string>
+
+</resources>

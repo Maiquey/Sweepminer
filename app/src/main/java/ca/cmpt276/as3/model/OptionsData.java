@@ -3,6 +3,7 @@ package ca.cmpt276.as3.model;
 import ca.cmpt276.as3.Options;
 
 public class OptionsData {
+
     private int rows;
     private int columns;
     private int numOfMines;
@@ -10,9 +11,6 @@ public class OptionsData {
     private static OptionsData instance;
 
     private OptionsData(){
-        this.rows = 4;
-        this.columns = 6;
-        this.numOfMines = 6;
     }
 
     public static  OptionsData getInstance(){
@@ -32,5 +30,17 @@ public class OptionsData {
 
     public int getNumOfMines() {
         return numOfMines;
+    }
+
+    public void setRows(int rows) {
+        this.rows = rows;
+    }
+
+    public void setColumns(int columns) {
+        this.columns = columns;
+    }
+
+    public void setNumOfMines(int numOfMines) {
+        this.numOfMines = numOfMines;
     }
 }
