@@ -13,6 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import ca.cmpt276.as3.databinding.ActivityGameBinding;
@@ -119,10 +120,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void updateGrid() {
-        if (gameManager.gameWon()){
-            gameManager.revealGrid();
-            Toast.makeText(this, "Game won", Toast.LENGTH_SHORT).show();
-        }
         for (int row = 0; row < numRows; row++){
             for (int col = 0; col < numCols; col++){
 
@@ -141,6 +138,11 @@ public class GameActivity extends AppCompatActivity {
             }
         }
         updateTexts();
+        if (gameManager.gameWon()){
+            FragmentManager manager = getSupportFragmentManager();
+            GameOverFragment gameOver = new GameOverFragment();
+            gameOver.show(manager, "GameOverDialogue");
+        }
     }
 
     private void updateTexts() {
