@@ -1,5 +1,11 @@
 package ca.cmpt276.as3.model;
 
+/*
+    Class to store player's settings for the game
+    Stores the dimensions of the grid and number of mines
+    Singleton class
+ */
+
 public class OptionsData {
 
     private int rows;

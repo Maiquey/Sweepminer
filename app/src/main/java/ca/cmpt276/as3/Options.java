@@ -11,6 +11,11 @@ import android.widget.RadioGroup;
 import androidx.navigation.ui.AppBarConfiguration;
 import ca.cmpt276.as3.databinding.ActivityOptionsBinding;
 
+/*
+    Option settings activity
+    saves user preference settings
+ */
+
 public class Options extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;

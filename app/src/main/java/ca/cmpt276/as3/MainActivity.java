@@ -8,6 +8,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import ca.cmpt276.as3.databinding.ActivityMainBinding;
 import android.widget.Button;
 
+/*
+    Activity for welcome screen
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;

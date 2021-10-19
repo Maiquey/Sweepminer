@@ -10,6 +10,11 @@ import androidx.navigation.ui.AppBarConfiguration;
 import ca.cmpt276.as3.databinding.ActivityMainMenuBinding;
 import ca.cmpt276.as3.model.OptionsData;
 
+/*
+    Activity for main menu
+    loads user setting preferences
+ */
+
 public class MainMenu extends AppCompatActivity {
 
     private static final String OPTION_1_DIMENSIONS = "4 x 6";

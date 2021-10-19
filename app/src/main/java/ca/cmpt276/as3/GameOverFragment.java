@@ -10,6 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+/*
+    Fragment for Alert Dialog upon winning game
+ */
+
 public class GameOverFragment extends AppCompatDialogFragment {
 
     @NonNull

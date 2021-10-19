@@ -9,6 +9,11 @@ import android.widget.TextView;
 import androidx.navigation.ui.AppBarConfiguration;
 import ca.cmpt276.as3.databinding.ActivityHelpScreenBinding;
 
+/*
+    Activity for help screen
+    includes hyperlink functionality
+ */
+
 public class HelpScreen extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
