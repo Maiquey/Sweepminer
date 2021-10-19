@@ -9,6 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -19,6 +20,12 @@ import ca.cmpt276.as3.databinding.ActivityGameBinding;
 import ca.cmpt276.as3.model.Cell;
 import ca.cmpt276.as3.model.GameManager;
 import ca.cmpt276.as3.model.OptionsData;
+
+/*
+    Game UI class
+    draws dynamic gameboard
+    animates scanning for gems
+ */
 
 public class GameActivity extends AppCompatActivity {
 
@@ -106,8 +113,32 @@ public class GameActivity extends AppCompatActivity {
 
     private void gridButtonClicked(int col, int row) {
         lockButtonSize();
+        Cell clickedCell = gameManager.getCell(row, col);
+        if (!gameManager.revealsMine(clickedCell) && !clickedCell.isScanned()){
+            wobbleScan(col, row);
+        }
         gameManager.cellClicked(col, row);
         updateGrid();
+    }
+
+    private void wobbleScan(int col, int row) {
+        Button button;
+        Cell cell;
+        for (int i = 0; i < numCols; i++){
+            button = buttons[row][i];
+            cell = gameManager.getCell(row, i);
+            if(!cell.isMineRevealed()) {
+                button.startAnimation(AnimationUtils.loadAnimation(this, R.anim.wobble));
+            }
+        }
+
+        for (int i = 0; i < numRows; i++){
+            button = buttons[i][col];
+            cell = gameManager.getCell(i, col);
+            if(!cell.isMineRevealed()) {
+                button.startAnimation(AnimationUtils.loadAnimation(this, R.anim.wobble));
+            }
+        }
     }
 
     private void updateGrid() {

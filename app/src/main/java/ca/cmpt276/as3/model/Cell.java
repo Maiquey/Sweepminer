@@ -1,5 +1,9 @@
 package ca.cmpt276.as3.model;
 
+/*
+    Class representing one cell of the game grid.
+ */
+
 public class Cell {
     private boolean hasMine;
     private boolean mineRevealed;

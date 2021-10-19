@@ -3,6 +3,11 @@ package ca.cmpt276.as3.model;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/*
+    GameManager class that holds stores game grid as an array of cells.
+    Manipulates and updates values in game Cells.
+ */
+
 public class GameManager {
     private ArrayList<Cell> initList;
     private Cell cellGrid[][];
@@ -20,7 +25,7 @@ public class GameManager {
         this.gridRows = numRows;
         this.gridCols = numCols;
 
-        //populate cellGrid
+        //populate initialization list
         this.initList = new ArrayList<Cell>();
         int minesInserted = 0;
         for (int i = 0; i < (numRows * numCols); i++){
@@ -33,8 +38,10 @@ public class GameManager {
             }
         }
 
+        //randomize mine location each game
         Collections.shuffle(initList);
 
+        //populate cellGrid
         int initIndex = 0;
         for (int row = 0; row < numRows; row++){
             for (int col = 0; col < numCols; col++){
@@ -46,7 +53,7 @@ public class GameManager {
 
     public void cellClicked(int col, int row){
         Cell cell = cellGrid[row][col];
-        if (cell.hasMine() && !cell.isMineRevealed()){
+        if (revealsMine(cell)){
             cell.setMineRevealed(true);
             numOfMinesRevealed++;
             updateScanners();
@@ -73,13 +80,13 @@ public class GameManager {
         int mineCount = 0;
         for (int i = 0; i < gridCols; i++){
             cell = cellGrid[row][i];
-            if (cell.hasMine() && !cell.isMineRevealed()){
+            if (revealsMine(cell)){
                 mineCount++;
             }
         }
         for (int i = 0; i < gridRows; i++){
             cell = cellGrid[i][col];
-            if (cell.hasMine() && !cell.isMineRevealed()){
+            if (revealsMine(cell)){
                 mineCount++;
             }
         }
@@ -87,6 +94,10 @@ public class GameManager {
         if (cell.isScanned()){
             cell.setNearbyHidden(mineCount);
         }
+    }
+
+    public boolean revealsMine(Cell cell) {
+        return cell.hasMine() && !cell.isMineRevealed();
     }
 
     public Cell getCell(int row, int col){
