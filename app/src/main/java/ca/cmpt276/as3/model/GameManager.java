@@ -93,14 +93,6 @@ public class GameManager {
         return cellGrid[row][col];
     }
 
-    public void revealGrid(){
-        for (int row = 0; row < gridRows; row++){
-            for (int col = 0; col < gridCols; col++){
-                cellGrid[row][col].setScanned(true);
-            }
-        }
-    }
-
     public boolean gameWon(){
         return numOfMinesRevealed == totalMines;
     }

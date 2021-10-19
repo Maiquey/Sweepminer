@@ -7,18 +7,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.ui.AppBarConfiguration;
-
 import ca.cmpt276.as3.databinding.ActivityGameBinding;
 import ca.cmpt276.as3.model.Cell;
 import ca.cmpt276.as3.model.GameManager;
@@ -150,10 +146,18 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void updateTexts() {
-        mineCount.setText("" + getString(R.string.mine_count_found) +
-                gameManager.getNumOfMinesRevealed() + getString(R.string.mine_count_of) +
-                gameManager.getTotalMines() + getString(R.string.mine_count_gemstones));
-        numOfScans.setText("" + getString(R.string.num_of_scans_used) + gameManager.getNumOfScans());
+        mineCount.setText(getString(R.string.mine_count_found) +
+                " " +
+                gameManager.getNumOfMinesRevealed() +
+                " " +
+                getString(R.string.mine_count_of) +
+                " " +
+                gameManager.getTotalMines() +
+                " " +
+                getString(R.string.mine_count_gemstones));
+        numOfScans.setText(getString(R.string.num_of_scans_used) +
+                " " +
+                gameManager.getNumOfScans());
     }
 
     private void lockButtonSize() {

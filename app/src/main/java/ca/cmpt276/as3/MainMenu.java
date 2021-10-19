@@ -3,21 +3,10 @@ package ca.cmpt276.as3;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import ca.cmpt276.as3.databinding.ActivityMainMenuBinding;
 import ca.cmpt276.as3.model.OptionsData;
 

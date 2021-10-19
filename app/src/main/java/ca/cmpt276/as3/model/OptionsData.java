@@ -1,7 +1,5 @@
 package ca.cmpt276.as3.model;
 
-import ca.cmpt276.as3.Options;
-
 public class OptionsData {
 
     private int rows;

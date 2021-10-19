@@ -32,8 +32,8 @@
     <string name="congratulation_message">Congratulations!\nYou found all the gemstones!</string>
     <string name="game_title">Sweepminer</string>
     <string name="signature">By Jan Mazurek</string>
-    <string name="mine_count_found">\"Found \"</string>
-    <string name="mine_count_of">\" of \"</string>
-    <string name="mine_count_gemstones">\" gemstones\"</string>
-    <string name="num_of_scans_used">\"Number of scans used: \"</string>
+    <string name="mine_count_found">Found</string>
+    <string name="mine_count_of">of</string>
+    <string name="mine_count_gemstones">gemstones</string>
+    <string name="num_of_scans_used">Number of scans used:</string>
 </resources>

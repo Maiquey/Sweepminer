@@ -4,16 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
-
 import androidx.navigation.ui.AppBarConfiguration;
-
 import ca.cmpt276.as3.databinding.ActivityOptionsBinding;
 
 public class Options extends AppCompatActivity {
