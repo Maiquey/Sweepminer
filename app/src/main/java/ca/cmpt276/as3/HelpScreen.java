@@ -3,18 +3,10 @@ package ca.cmpt276.as3;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import android.text.method.LinkMovementMethod;
+import android.widget.TextView;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import ca.cmpt276.as3.databinding.ActivityHelpScreenBinding;
 
 public class HelpScreen extends AppCompatActivity {
@@ -36,6 +28,12 @@ public class HelpScreen extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        //derived from https://www.geeksforgeeks.org/how-to-add-hyperlink-to-textview-in-android/
+        TextView link1 = findViewById(R.id.text_website_link);
+        link1.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView link2 = findViewById(R.id.text_image_link);
+        link2.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 
