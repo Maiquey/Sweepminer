@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -15,4 +16,70 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_how_to_play_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How to Play Sweepminer"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_explanation"
+        app:layout_constraintStart_toStartOf="@+id/text_explanation" />
+
+    <TextView
+        android:id="@+id/text_explanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:text="When playing Sweepminer, tap ore deposits on the grid to reveal how many gemstones are in the same row and column. Find all gemstones using as few scans as you can!"
+        app:layout_constraintBottom_toTopOf="@+id/text_author"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment_content_help_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_content_help_screen" />
+
+    <TextView
+        android:id="@+id/text_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:text="Jan Mazurek is a 2nd year Compting Science student at SFU.\nhttps://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment_content_help_screen"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_content_help_screen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_references"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:text="Here go references"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_author" />
+
+    <TextView
+        android:id="@+id/text_author_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About the Author"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_author"
+        app:layout_constraintStart_toStartOf="@+id/text_author" />
+
+    <TextView
+        android:id="@+id/text_reference_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="References"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_references"
+        app:layout_constraintStart_toStartOf="@+id/text_references" />
 </androidx.constraintlayout.widget.ConstraintLayout>
