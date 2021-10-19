@@ -8,7 +8,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -36,6 +38,11 @@ public class HelpScreen extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        TextView link1 = findViewById(R.id.text_website_link);
+        link1.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView link2 = findViewById(R.id.text_image_link);
+        link2.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 

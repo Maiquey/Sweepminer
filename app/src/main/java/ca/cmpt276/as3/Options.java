@@ -59,6 +59,7 @@ public class Options extends AppCompatActivity {
             });
 
             group.addView(button);
+            button.setTextColor(getColor(android.R.color.white));
 
             //default button
             if (dimensions.equals(getDimensions(this))){
@@ -101,6 +102,7 @@ public class Options extends AppCompatActivity {
             });
 
             group.addView(button);
+            button.setTextColor(getColor(android.R.color.white));
 
             //default button
             if (mines == getMines(this)){

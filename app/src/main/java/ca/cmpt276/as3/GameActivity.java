@@ -2,6 +2,10 @@ package ca.cmpt276.as3;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +15,6 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -91,11 +94,6 @@ public class GameActivity extends AppCompatActivity {
                         TableRow.LayoutParams.MATCH_PARENT,
                         1.0f));
 
-                Cell gameCell = gameManager.getCell(row, col);
-                if (gameCell.isScanned()){
-                    button.setText("" + gameCell.getNearbyHidden());
-                }
-
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -106,15 +104,12 @@ public class GameActivity extends AppCompatActivity {
                 tableRow.addView(button);
                 buttons[row][col] = button;
 
-                if (gameCell.isMineRevealed()){
-                    button.setBackgroundResource(R.drawable.ic_baseline_auto_graph_24);
-                }
-
             }
         }
     }
 
     private void gridButtonClicked(int col, int row) {
+        lockButtonSize();
         gameManager.cellClicked(col, row);
         updateGrid();
     }
@@ -132,7 +127,7 @@ public class GameActivity extends AppCompatActivity {
                 }
 
                 if (gameCell.isMineRevealed()){
-                    button.setBackgroundResource(R.drawable.ic_baseline_auto_graph_24);
+                    revealMine(button);
                 }
 
             }
@@ -145,10 +140,36 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    private void updateTexts() {
-        mineCount.setText("Found " + gameManager.getNumOfMinesRevealed() + " of " + gameManager.getTotalMines() + " mines");
-        numOfScans.setText("Number of scans used: " + gameManager.getNumOfScans());
+    private void revealMine(Button button) {
+        int newWidth = button.getWidth();
+        int newHeight = button.getHeight();
+        Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gemstone);
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(originalBitmap, newWidth, newHeight, true);
+        Resources resource = getResources();
+        button.setBackground(new BitmapDrawable(resource, scaledBitmap));
     }
 
+    private void updateTexts() {
+        mineCount.setText("" + getString(R.string.mine_count_found) +
+                gameManager.getNumOfMinesRevealed() + getString(R.string.mine_count_of) +
+                gameManager.getTotalMines() + getString(R.string.mine_count_gemstones));
+        numOfScans.setText("" + getString(R.string.num_of_scans_used) + gameManager.getNumOfScans());
+    }
+
+    private void lockButtonSize() {
+        for (int row = 0; row < numRows; row++){
+            for (int col = 0; col < numCols; col++){
+                Button button = buttons[row][col];
+
+                int width = button.getWidth();
+                button.setMinWidth(width);
+                button.setMaxWidth(width);
+
+                int height = button.getHeight();
+                button.setMinHeight(height);
+                button.setMaxHeight(height);
+            }
+        }
+    }
 
 }

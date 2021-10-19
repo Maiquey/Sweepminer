@@ -7,6 +7,12 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="cmpt276_website">
+        <a href="https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home">
+            https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home</a></string>
+    <string name="image_website">
+        <a href="https://pixabay.com/">
+            https://pixabay.com/</a></string>
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="title_activity_options">Options</string>
     <string name="title_activity_help_screen">Help</string>
@@ -14,4 +20,20 @@
     <string name="dimensions_option_3">6 x 15</string>
     <string name="dimensions_option_2">5 x 10</string>
     <string name="dimensions_option_1">4 x 6</string>
+    <string name="about_author">Jan Mazurek is a 2nd year Computing Science student at SFU.</string>
+    <string name="references">References</string>
+    <string name="about_the_author">About the Author</string>
+    <string name="image_artists">Images by Paul Edney, Glavo and adoborepublic, sourced from:</string>
+    <string name="game_instructions">When playing Sweepminer, tap ore deposits on the grid to reveal how many gemstones are in the same row and column. Find all gemstones using as few scans as you can!</string>
+    <string name="game_instruction_title">How to Play Sweepminer</string>
+    <string name="play_game">Play Game</string>
+    <string name="grid_size">Grid Size</string>
+    <string name="number_of_mines">Number of Mines</string>
+    <string name="congratulation_message">Congratulations!\nYou found all the gemstones!</string>
+    <string name="game_title">Sweepminer</string>
+    <string name="signature">By Jan Mazurek</string>
+    <string name="mine_count_found">\"Found \"</string>
+    <string name="mine_count_of">\" of \"</string>
+    <string name="mine_count_gemstones">\" gemstones\"</string>
+    <string name="num_of_scans_used">\"Number of scans used: \"</string>
 </resources>
