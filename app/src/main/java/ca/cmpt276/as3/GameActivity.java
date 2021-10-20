@@ -126,7 +126,7 @@ public class GameActivity extends AppCompatActivity {
             wobbleScan(col, row);
             scanSound.start();
         }
-        else{
+        else if (gameManager.revealsMine(clickedCell)){
             scoreSound.start();
         }
         gameManager.cellClicked(col, row);
