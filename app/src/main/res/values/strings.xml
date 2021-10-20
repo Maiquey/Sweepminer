@@ -24,7 +24,7 @@
     <string name="references">References</string>
     <string name="about_the_author">About the Author</string>
     <string name="image_artists">Images by Paul Edney, Glavo and adoborepublic, sourced from:</string>
-    <string name="game_instructions">When playing Sweepminer, tap ore deposits on the grid to reveal how many gemstones are in the same row and column. Find all gemstones using as few scans as you can!</string>
+    <string name="game_instructions">When playing Sweepminer, tap ore deposits on the grid to scan how many hidden gemstones are in the same row and column. Find all the gemstones using as few scans as you can!</string>
     <string name="game_instruction_title">How to Play Sweepminer</string>
     <string name="play_game">Play Game</string>
     <string name="grid_size">Grid Size</string>
