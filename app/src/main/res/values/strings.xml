@@ -8,11 +8,14 @@
     <string name="previous">Previous</string>
 
     <string name="cmpt276_website">
-        <a href="https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home">
-            https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home</a></string>
+        <a href="https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home/">
+            https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt276/home/</a></string>
     <string name="image_website">
         <a href="https://pixabay.com/">
             https://pixabay.com/</a></string>
+    <string name="sound_website">
+        <a href="https://mixkit.co/">
+            https://mixkit.co/</a></string>
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="title_activity_options">Options</string>
     <string name="title_activity_help_screen">Help</string>
@@ -23,7 +26,7 @@
     <string name="about_author">Jan Mazurek is a 2nd year Computing Science student at SFU.</string>
     <string name="references">References</string>
     <string name="about_the_author">About the Author</string>
-    <string name="image_artists">Images by Paul Edney, Glavo and adoborepublic, sourced from:</string>
+    <string name="image_artists">Images by Paul Edney, Glavo and adoborepublic. Sound effects from mixkit.co. Sourced from:</string>
     <string name="game_instructions">When playing Sweepminer, tap ore deposits on the grid to scan how many hidden gemstones are in the same row and column. Find all the gemstones using as few scans as you can!</string>
     <string name="game_instruction_title">How to Play Sweepminer</string>
     <string name="play_game">Play Game</string>

@@ -39,6 +39,9 @@ public class HelpScreen extends AppCompatActivity {
 
         TextView link2 = findViewById(R.id.text_image_link);
         link2.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView link3 = findViewById(R.id.sound_website_link);
+        link3.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 

@@ -6,8 +6,11 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.ActionMode;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -29,6 +32,8 @@ import ca.cmpt276.as3.model.OptionsData;
 
 public class GameActivity extends AppCompatActivity {
 
+    private MediaPlayer scanSound;
+    private MediaPlayer scoreSound;
     private int numRows;
     private int numCols;
     private OptionsData optionsData;
@@ -54,6 +59,9 @@ public class GameActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
+
+        scanSound = MediaPlayer.create(this, R.raw.scan);
+        scoreSound = MediaPlayer.create(this, R.raw.score);
 
         optionsData = OptionsData.getInstance();
 
@@ -116,6 +124,10 @@ public class GameActivity extends AppCompatActivity {
         Cell clickedCell = gameManager.getCell(row, col);
         if (!gameManager.revealsMine(clickedCell) && !clickedCell.isScanned()){
             wobbleScan(col, row);
+            scanSound.start();
+        }
+        else{
+            scoreSound.start();
         }
         gameManager.cellClicked(col, row);
         updateGrid();
@@ -207,4 +219,16 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    public void releaseMediaPlayers(){
+        scanSound.release();
+        scanSound = null;
+        scoreSound.release();
+        scanSound = null;
+    }
+
+    @Override
+    protected void onDestroy() {
+        releaseMediaPlayers();
+        super.onDestroy();
+    }
 }

@@ -6,13 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import androidx.navigation.ui.AppBarConfiguration;
 import ca.cmpt276.as3.databinding.ActivityMainBinding;
-
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /*
     Activity for welcome screen
